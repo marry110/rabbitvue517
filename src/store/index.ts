@@ -1,49 +1,7 @@
 import { createStore } from 'vuex'
-// vue2.0 创建仓库 new Vuex.Store({})
-// vue3.0 创建仓库  createStore({})
-
-// 模块A
-const moduleA = {
-  state: {
-    username: 'moduleA',
-  },
-  getters: {
-    newName(state: any) {
-      return state.username + '!!!'
-    },
-  },
-  mutations: {
-    updateName(state: any) {
-      state.username = 'moduleAAAAA'
-    },
-  },
-}
-// 模块B
-const moduleB = {
-  namespaced: true,
-  state: {
-    username: 'moduleB',
-  },
-  getters: {
-    newName(state: any) {
-      return state.username + '!!!'
-    },
-  },
-
-  mutations: {
-    updateName(state: any) {
-      state.username = 'moduleBBBBB'
-    },
-  },
-
-  actions: {
-    updateName(ctx: any) {
-      setTimeout(() => {
-        ctx.commit('updateName')
-      }, 1000)
-    },
-  },
-}
+// import cart from './modules/cart'
+// import category from './modules/category'
+// import user from './modules/user'
 
 export default createStore({
   // 状态
@@ -56,7 +14,8 @@ export default createStore({
   actions: {},
   // 分模块
   modules: {
-    moduleA,
-    moduleB,
+    // cart,
+    // category,
+    // user,
   },
 })
